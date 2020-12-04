@@ -19,4 +19,4 @@ def buscar(url):
 resposta = buscar(URL_AUTOMOVEIS)
 if resposta:
     soup = BeautifulSoup(resposta, 'html.parser')
-    print(soup.prettify())
+    print(soup.title.get_text().strip())
