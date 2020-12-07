@@ -16,7 +16,16 @@ def buscar(url):
         print(error)
 
 
+def parsing(resposta_html):
+    try:
+        soup = BeautifulSoup(resposta_html, 'html.parser')
+        return soup
+    except Exception as error:
+        print('Erro ao fazer parsing do HTML!')
+        print(error)
+
+
 resposta = buscar(URL_AUTOMOVEIS)
 if resposta:
-    soup = BeautifulSoup(resposta, 'html.parser')
+    soup = parsing(resposta)
     print(soup.title.get_text().strip())
