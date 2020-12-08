@@ -28,6 +28,6 @@ def parsing(resposta_html):
 resposta = buscar(URL_AUTOMOVEIS)
 if resposta:
     soup = parsing(resposta)
-    links = soup.find_all('a')
-    for link in links:
-        print(link['href'])
+    cards_pai = soup.find('div', class_="ui three doubling link cards")
+    cards = cards_pai.find_all('a')
+    print(cards)
