@@ -28,4 +28,6 @@ def parsing(resposta_html):
 resposta = buscar(URL_AUTOMOVEIS)
 if resposta:
     soup = parsing(resposta)
-    print(soup.title.get_text().strip())
+    links = soup.find_all('a')
+    for link in links:
+        print(link)
