@@ -30,4 +30,4 @@ if resposta:
     soup = parsing(resposta)
     links = soup.find_all('a')
     for link in links:
-        print(link)
+        print(link['href'])
