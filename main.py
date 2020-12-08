@@ -30,4 +30,4 @@ if resposta:
     soup = parsing(resposta)
     cards_pai = soup.find('div', class_="ui three doubling link cards")
     cards = cards_pai.find_all('a')
-    print(cards)
+    print(cards[0])
